@@ -1,63 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
-    <loc>https://codebridgeacademy.in/about.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://codebridgeacademy.in/advanced-learning.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://codebridgeacademy.in/book-demo.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://codebridgeacademy.in/computer-fundamentals.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://codebridgeacademy.in/contact.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://codebridgeacademy.in/courses.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://codebridgeacademy.in/database.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://codebridgeacademy.in/home-tuition.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://codebridgeacademy.in/</loc>
+    <loc>https://codebridge-academy-git-main-suraj-guptas-projects-78fbcd29.vercel.app/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+
   <url>
-    <loc>https://codebridgeacademy.in/online-classes.html</loc>
+    <loc>https://codebridge-academy-git-main-suraj-guptas-projects-78fbcd29.vercel.app/about.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://codebridgeacademy.in/programming.html</loc>
+    <loc>https://codebridge-academy-git-main-suraj-guptas-projects-78fbcd29.vercel.app/advanced-learning.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://codebridgeacademy.in/web-development.html</loc>
+    <loc>https://codebridge-academy-git-main-suraj-guptas-projects-78fbcd29.vercel.app/book-demo.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <url>
+    <loc>https://codebridge-academy-git-main-suraj-guptas-projects-78fbcd29.vercel.app/computer-fundamentals.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codebridge-academy-git-main-suraj-guptas-projects-78fbcd29.vercel.app/contact.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codebridge-academy-git-main-suraj-guptas-projects-78fbcd29.vercel.app/courses.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codebridge-academy-git-main-suraj-guptas-projects-78fbcd29.vercel.app/database.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codebridge-academy-git-main-suraj-guptas-projects-78fbcd29.vercel.app/home-tuition.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codebridge-academy-git-main-suraj-guptas-projects-78fbcd29.vercel.app/online-classes.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codebridge-academy-git-main-suraj-guptas-projects-78fbcd29.vercel.app/programming.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codebridge-academy-git-main-suraj-guptas-projects-78fbcd29.vercel.app/web-development.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
