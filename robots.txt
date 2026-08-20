@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://codebridge-academy-git-main-suraj-guptas-projects-78fbcd29.vercel.app/sitemap.xml
+Sitemap: https://codebridge-academy-one.vercel.app/sitemap.xml
