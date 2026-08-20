@@ -1,0 +1,252 @@
+/* ===================================================================
+   CodeBridge Academy — custom stylesheet
+   Tailwind (via CDN) is the primary styling system. This file only
+   carries: design tokens (CSS variables), font loading, and the few
+   effects (glass panels, code-editor mockup, animations) that are
+   cleaner as real CSS than as utility soup.
+   =================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --navy:        #0A1128;
+  --navy-soft:   #10193B;
+  --blue:        #3D5AFE;
+  --blue-soft:   #6B85FF;
+  --cyan:        #22D3EE;
+  --ink:         #0F172A;
+  --slate:       #475569;
+  --cloud:       #F6F8FB;
+  --line:        #E2E8F0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  color: var(--ink);
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* ---------- Background grid / dot texture (hero, dark sections) ---- */
+.bg-grid-navy {
+  background-color: var(--navy);
+  background-image:
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.bg-dot-fade {
+  background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.14) 1px, transparent 0);
+  background-size: 22px 22px;
+}
+
+/* ---------- Glass panel ------------------------------------------- */
+.glass {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.glass-light {
+  background: rgba(255,255,255,0.72);
+  border: 1px solid rgba(15,23,42,0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* ---------- Code editor mockup (hero signature element) ------------ */
+.editor-window {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px -20px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.06);
+  background: #0D1330;
+}
+.editor-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.editor-dot { width: 11px; height: 11px; border-radius: 50%; }
+.editor-body {
+  padding: 20px 22px 26px;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 13.5px;
+  line-height: 1.9;
+}
+.tok-kw   { color: #C792EA; }
+.tok-fn   { color: #82AAFF; }
+.tok-str  { color: #22D3EE; }
+.tok-com  { color: #64748B; }
+.tok-var  { color: #E4E9F5; }
+.tok-num  { color: #F78C6C; }
+
+/* ---------- Floating snippet cards ---------------------------------- */
+.float-card {
+  animation: floaty 6s ease-in-out infinite;
+}
+.float-card.delay-1 { animation-delay: .8s; }
+.float-card.delay-2 { animation-delay: 1.6s; }
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0px) rotate(var(--tilt, 0deg)); }
+  50% { transform: translateY(-10px) rotate(var(--tilt, 0deg)); }
+}
+
+/* ---------- Reveal-on-scroll ---------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Timeline connector (process section) --------------------- */
+.timeline-line {
+  background: linear-gradient(90deg, var(--blue), var(--cyan));
+}
+.timeline-line-v {
+  background: linear-gradient(180deg, var(--blue), var(--cyan));
+}
+
+/* ---------- Mobile nav ------------------------------------------------ */
+#mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .35s ease;
+}
+#mobile-menu.open {
+  max-height: 620px;
+}
+
+/* ---------- Focus states (accessibility) ------------------------------ */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ---------- WhatsApp FAB tooltip --------------------------------------- */
+.wa-tooltip {
+  opacity: 0;
+  transform: translateX(6px);
+  pointer-events: none;
+  transition: opacity .2s ease, transform .2s ease;
+}
+.wa-fab:hover .wa-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ---------- Utility: gradient text -------------------------------------- */
+.text-gradient {
+  background: linear-gradient(90deg, var(--blue), var(--cyan));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---------- Reduced motion ------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .float-card { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+/* ---------- Small helpers ------------------------------------------------- */
+.section-eyebrow {
+  letter-spacing: .14em;
+}
+
+
+/* =========================================
+   Cursor Bubble Animation
+   ========================================= */
+.cursor-bubble {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: var(--bubble-size, 18px);
+  height: var(--bubble-size, 18px);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle at 35% 30%, rgba(255,255,255,.95), rgba(103,232,249,.45) 28%, rgba(37,99,235,.22) 62%, rgba(37,99,235,0) 72%);
+  border: 1px solid rgba(59,130,246,.25);
+  box-shadow: 0 0 18px rgba(34,211,238,.22);
+  animation: cursorBubbleFloat var(--bubble-duration, .9s) ease-out forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes cursorBubbleFloat {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(.35);
+  }
+  15% {
+    opacity: .9;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(
+      calc(-50% + var(--bubble-x, 0px)),
+      calc(-50% + var(--bubble-y, -55px))
+    ) scale(1.35);
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .cursor-bubble {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-bubble {
+    display: none;
+  }
+}
+
+
+/* =========================================
+   SEO Auto Gradient Background
+   ========================================= */
+body {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(59,130,246,.10), transparent 34%),
+    radial-gradient(circle at 85% 15%, rgba(34,211,238,.10), transparent 32%),
+    radial-gradient(circle at 50% 90%, rgba(168,85,247,.08), transparent 35%),
+    linear-gradient(120deg, #ffffff, #f8fbff, #ffffff, #f7fcff);
+  background-size: 180% 180%;
+  animation: autoGradientBackground 16s ease-in-out infinite;
+}
+
+@keyframes autoGradientBackground {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body { animation: none; }
+}
